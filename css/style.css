@@ -1,0 +1,217 @@
+/* GENERAL */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-size: 16px;
+    color: #041633;
+}
+
+i{
+    cursor: pointer;
+    transition: all 300ms;
+}
+
+i:hover{
+    transform: scale(1.1);
+}
+
+.container{
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* HEADER */
+header{
+    margin: 30px 0;
+    text-align: center;
+}
+
+header img{
+    max-width: 130px;
+    margin-bottom: 2rem;
+}
+
+/* ADD TODO */
+.new-todo{
+    display: flex;
+
+}
+
+.new-todo input,
+.new-todo button,
+.btn{
+    border: none;
+    outline: none;
+    height: 35px;
+    transition: all 300ms;
+}
+
+.new-todo button:hover,
+.btn:hover{
+    background-color: lime;
+}
+
+
+.new-todo input{
+    flex-grow: 1;
+    margin-right: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.459);
+}
+
+.new-todo input:hover,
+.new-todo input:focus{
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+
+.new-todo button,
+.btn{
+    padding: 0 30px;
+    text-transform: uppercase;
+    font-size: 12px;
+    background-color: limegreen;
+    cursor: pointer;
+}
+
+.btn{
+    height: 30px;
+    cursor: pointer;
+}
+
+/* TODO LIST */
+.todos-container{
+    margin: 40px 0;
+    padding: 15px 30px;
+    background-color: #e5e5e5;
+    box-shadow: 0px 15px 15px -10px rgba(0, 0, 0, 0.235);
+    z-index: 2;
+    position: relative;
+}
+
+.todo{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    
+}
+
+.todo:not(:last-child){
+    border-bottom: 1px solid rgba(0, 0, 0, 0.287);
+}
+
+.todo .text.completed{
+    text-decoration: line-through;
+}
+
+.todo .text{
+    position: relative;
+    padding: 0 30px;
+}
+
+.todo .text::before{
+    content: '';
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #041633;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.705);
+}
+
+.todo .text.completed::before{
+    content: '\f00c';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 12px;
+    color: limegreen;
+}
+
+.todo .actions i:not(:last-child),
+.deleted .actions i:not(:last-child){
+    margin-right: 10px;
+    color: dodgerblue;
+}
+
+.todo .actions i:last-child,
+.deleted .actions i:last-child{
+    color: rgb(238, 62, 62);
+    font-size: 20px;
+    position: relative;
+    top: 2px;
+}
+
+/* EDIT MODAL */
+.edit-modal {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    z-index: 2;
+    align-items: center;
+}
+
+.edit-modal .content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.edit-modal .content input{
+    width: 50%;
+    height: 30px;
+    outline: none;
+    border: none;
+    background-color: #e5e5e5;
+}
+
+/* TODO TRASH */
+.deleted{
+    background-color: #e5e5e5;
+    padding: 1rem 30px;
+    box-shadow: 0px 15px 15px -10px rgba(0, 0, 0, 0.235);
+    z-index: 2;
+    position: relative;
+}
+
+.deleted ul li{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.deleted ul li:not(:last-child){
+    border-bottom: 1px solid rgba(0, 0, 0, 0.329);
+}
+
+.deleted h2{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* STYLE BOTTOM */
+.background{
+    position: fixed;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+}
+
+.background .back1{
+    position: relative;
+    bottom: 20px;
+}

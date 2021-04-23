@@ -28,12 +28,6 @@ const app = new Vue({
         // NEW LIST ITEM
         newTodo: '',
 
-        // EDITING PARAMETERS
-        editTodo: {
-            visibility: false,
-            text: '',
-            index: null,
-        },
     },
     methods: {
         // ADD NEW TODO
@@ -53,20 +47,14 @@ const app = new Vue({
         removeTodo(index){
             const deleted = this.todos.splice(index, 1);
             this.deletedList.push({
-                text: deleted[0].text,
-                completed: true,
-                textToUpdate: '',
-                visible: false,
+                ...deleted[0],
             });
             console.log(this.deletedList);
         },
         // RESTORE DELETED TODO
         putBack(index){
             this.todos.push({
-                text: this.deletedList[index].text,
-                completed: false,
-                textToUpdate: '',
-                visible: false,
+                ...this.deletedList[index], 
             });
             this.deleteConfirm(index);
         },

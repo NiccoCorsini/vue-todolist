@@ -60,7 +60,7 @@
                     </section>
 
                     <!-- TODO ITEM -->
-                    <span class="text" :class="{completed: todo.completed, completed2: todo.completed}" @click="updateStatus(index)">{{todo.text}}</span>
+                    <span class="text" :class="{completed: todo.completed}" @click="updateStatus(index)">{{todo.text}}</span>
 
                     <div class="actions">
                         <i class="fas fa-edit" @click="showEdit(todo)"></i>
